@@ -99,5 +99,83 @@ d. Expected Outputs and Limitations:
         o	The quality of predictions depends on the quality and granularity of the data.
         o	Models may require frequent updating as new data becomes available.
 
+# Task 2: Time Series Model Development and Evaluation
+## Overview
+In this task, we aim to develop and evaluate multiple models for predicting oil prices, specifically focusing on Brent crude oil prices. The objective is to explore different modeling techniques, which include traditional time series models, econometric models, and machine learning algorithms. We will also compare the performance of these models using various evaluation metrics.
+
+## Objectives
+- Model Development: Implement different types of models to predict Brent crude oil prices.
+- Time Series Models: Such as ARIMA and SARIMA, which capture temporal dependencies in the data.
+- Econometric Models: Including linear regression, which can incorporate external variables and trends.
+- Machine Learning Models: Such as Random Forest and Gradient Boosting, which can capture complex relationships in the data.
+- Model Evaluation: Assess the performance of each model based on multiple metrics.
+Root Mean Squared Error (RMSE): Measures the average magnitude of the errors between predicted and actual values.
+- Mean Absolute Error (MAE): Provides the average error in absolute terms, giving an idea of how far off predictions are on average.
+- R-squared: Indicates the proportion of variance in the dependent variable that can be explained by the independent variables.
+- Comparison of Models: Create a framework to compare the performance of all models on the same dataset using the defined metrics.
+
+## Data Preparation
+- Data Collection
+The dataset will typically include historical Brent crude oil prices along with relevant features such as dates. It is crucial to ensure that the data is clean and preprocessed before building any models. This includes:
+
+- Handling missing values.
+Transforming date columns to appropriate formats.
+Creating lagged variables for time series analysis.
+Feature Engineering
+Feature engineering is a critical step in the modeling process:
+
+- Lagged Variables: Creating lagged versions of the target variable (e.g., previous day's price) to help models understand trends.
+- Date Features: Converting date columns into numerical formats (e.g., timestamps) to make them usable for regression models.
+Model Implementation
+Time Series Models
+
+**ARIMA:**
+
+ARIMA (AutoRegressive Integrated Moving Average) is a widely used time series forecasting method that combines autoregression, differencing, and moving averages. It is suitable for univariate time series data that shows patterns over time.
+SARIMA:
+
+Seasonal ARIMA extends ARIMA by adding seasonal components, making it suitable for data with seasonal patterns.
+Econometric Models
+
+**Linear Regression:**
+
+A simple yet powerful approach that models the relationship between a dependent variable and one or more independent variables. It can include lagged variables and other features to improve predictive accuracy.
+Machine Learning Models
+
+**Random Forest:**
+
+An ensemble learning method that constructs multiple decision trees during training and outputs the mode of the classes for classification or mean prediction for regression. It is robust to overfitting and can handle non-linear relationships.
+Gradient Boosting:
+
+Another ensemble technique that builds models sequentially, where each model attempts to correct the errors of the previous ones. It often yields high accuracy but may require careful tuning of parameters.
+Model Evaluation and Comparison
+After fitting the models, we will evaluate their performance using the defined metrics. The evaluation process will involve:
+
+Making predictions on a holdout dataset.
+Calculating RMSE, MAE, and R-squared for each model.
+Creating a comparison table to summarize the metrics for all models.
+
+## Usage
+To clone and run the code for this task, follow these steps:
+
+1. Clone the Repository
+
+2. Navigate to the Project Directory
+
+- cd task-2
+Set Up a Virtual Environment (Optional)
+It is recommended to use a virtual environment to manage dependencies. You can create a virtual environment using the following commands:
+
+python -m venv venv
+venv\Scripts\activate
+
+## Install Dependencies
+Make sure you have all the necessary libraries installed. You can install them using pip. Use the following command:
+It will install everything needed for this task.
+- pip install -r requirements.txt
+
+## Run the Code
+- You can follow the analysis.ipynb file.
+
 Author: Natnahom Asfaw
 Date: 20/02/2025
