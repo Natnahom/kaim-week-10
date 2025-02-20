@@ -99,8 +99,14 @@ def build_random_forest_model(df):
     Returns:
         RandomForestRegressor: Fitted Random Forest model.
     """
-    X = df[['Date']]
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['Date_num'] = df['Date'].map(pd.Timestamp.timestamp)
+    df['Lagged_Price'] = df['Price'].shift(1)
+    df = df.dropna()
+    
+    X = df[['Date_num', 'Lagged_Price']]  # Use the same features as the linear model
     y = df['Price']
+    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     model = RandomForestRegressor()
     model.fit(X_train, y_train)
@@ -139,9 +145,20 @@ def evaluate_model(model, df, forecast_steps=30):
     Returns:
         dict: Dictionary containing RMSE, MAE, and R-squared.
     """
-    # Generate predictions
-    predictions = model.forecast(steps=forecast_steps)
+    # Ensure that the necessary features are available
+    df['Date_num'] = df['Date'].map(pd.Timestamp.timestamp)
+    df['Lagged_Price'] = df['Price'].shift(1)
+    df = df.dropna()
     
+    # Generate predictions
+    if hasattr(model, 'forecast'):
+        # Time series models (like ARIMA)
+        predictions = model.forecast(steps=forecast_steps)
+    else:
+        # For regression models, predict using the last available features
+        X_last = df[['Date_num', 'Lagged_Price']].iloc[-forecast_steps:]
+        predictions = model.predict(X_last)
+
     # Aligning predictions with actual values
     actual_values = df['Price'].iloc[-forecast_steps:]  # Last 'n' actual values
     
