@@ -43,6 +43,7 @@ def EDA(df):
     plt.show()
 
     # Frequency with the Date
+    plt.figure(figsize=(14, 7))
     plt.xlabel('Date')
     plt.ylabel('Frequency')
     plt.hist(df)    
