@@ -15,10 +15,8 @@ def preprocessing(df):
         pd.DataFrame: Cleaned DataFrame.
     """
 
-    df = df.dropna(inplace=True) # removes missing values from the original data
+    df.dropna(inplace=True) # removes missing values from the original data
 
-    # Drop duplicates
-    df = df.drop_duplicates()
     df['Price'] = df['Price'].astype(float)
 
     # Replace outliers with median
@@ -29,5 +27,22 @@ def preprocessing(df):
     return df
 
 def EDA(df):
+
+    """
+    Plot the trends of Brent oil prices over time.
     
-    return df
+    Args:
+        df (pd.DataFrame): DataFrame containing the oil prices.
+    """
+    plt.figure(figsize=(14, 7))
+    plt.plot(df['Date'], df['Price'], label='Brent Oil Price')
+    plt.title('Brent Oil Price Over Time')
+    plt.xlabel('Date')
+    plt.ylabel('Price (USD per barrel)')
+    plt.legend()
+    plt.show()
+
+    # Frequency with the Date
+    plt.xlabel('Date')
+    plt.ylabel('Frequency')
+    plt.hist(df)    
