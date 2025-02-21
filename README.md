@@ -1,1 +1,103 @@
 ## This is week-10 of 10 academy
+
+# Task 1: Defining the Data Analysis Workflow and Understanding the Model and Data
+1. Defining the Data Analysis Workflow
+
+a. Steps and Processes for Analyzing Brent Oil Prices Data:
+
+    1.	Data Collection and Preprocessing:
+
+        o	Load the historical Brent oil prices dataset.
+        o	Clean the data (handle missing values, outliers, etc.).
+        o	Convert the Date column to a datetime format.
+        o	Ensure the Price column is in a numeric format.
+
+    2.	Exploratory Data Analysis (EDA):
+
+        o	Visualize the time series data (e.g., line plot of prices over time).
+        o	Identify trends, seasonality, and anomalies.
+        o	Analyze the distribution of oil prices.
+
+    3.	Feature Engineering:
+
+        o	Create additional features such as moving averages, price differences, or volatility measures.
+        o	Identify and mark key events (e.g., political decisions, conflicts, sanctions, OPEC policy changes) that may have impacted prices.
+
+    4.	Model Selection:
+
+        o	Choose appropriate time series models (e.g., ARIMA, GARCH) based on the data characteristics.
+        o	Consider Bayesian models (e.g., using PyMC3) for probabilistic inference.
+        5.	Model Training and Validation:
+        o	Split the data into training and testing sets.
+        o	Train the selected models on the training data.
+        o	Validate the models using the testing data and evaluate performance using metrics like RMSE, MAE, or AIC.
+    6.	Event Impact Analysis:
+
+        o	Analyze the impact of key events on oil prices by comparing price changes before and after the events.
+        o	Use statistical tests or Bayesian inference to measure the significance of these impacts.
+    7.	Reporting and Visualization:
+
+        o	Generate visualizations (e.g., time series plots, event impact plots).
+        o	Prepare a report summarizing the findings, insights, and recommendations.
+
+b. Understanding Data Generation, Sampling, and Compilation:
+
+    •	The dataset contains daily Brent oil prices from May 20, 1987, to September 30, 2022.
+    •	The data is likely sampled from market transactions and compiled by a financial or energy data provider.
+    •	The dataset is time-series data, where each observation is dependent on previous observations.
+
+c. Model Inputs, Parameters, and Outputs:
+
+    •	Inputs: Historical Brent oil prices, key event dates, and any additional features (e.g., moving averages, volatility).
+    •	Parameters: Model-specific parameters (e.g., ARIMA parameters (p, d, q), GARCH parameters (p, q)).
+    •	Outputs: Predicted oil prices, event impact analysis, and probabilistic forecasts.
+
+d. Assumptions and Limitations:
+
+    •	Assumptions:
+        o	The time series is stationary (or can be made stationary through differencing).
+        o	Key events have a measurable impact on oil prices.
+        o	The chosen models adequately capture the underlying data generation process.
+        •	Limitations:
+        o	The analysis is limited to the available historical data and may not account for future unprecedented events.
+        o	The impact of events may be confounded by other factors not included in the dataset.
+        o	The models may not fully capture complex, non-linear relationships in the data.
+
+e. Media Channels and Formats for Communicating Results:
+
+    •	Reports: Detailed PDF reports with visualizations and insights.
+    •	Presentations: Slide decks for stakeholders, summarizing key findings.
+    •	Dashboards: Interactive dashboards (e.g., using Tableau or Power BI) for real-time data exploration.
+    •	Email Updates: Regular email updates with key insights and forecasts.
+
+2. Understanding the Model and Data
+
+a. Key Concepts and Models:
+    •	ARIMA (AutoRegressive Integrated Moving Average): A model that captures temporal dependencies in time series data. It is defined by parameters (p, d, q) where:
+        o	p is the number of autoregressive terms.
+        o	d is the degree of differencing.
+        o	q is the number of moving average terms.
+    •	GARCH (Generalized Autoregressive Conditional Heteroskedasticity): A model that captures volatility clustering in time series data. It is useful for modeling the variance of the series over time.
+    •	Bayesian Models: These models use probabilistic inference to estimate parameters and make predictions. PyMC3 is a Python library for Bayesian modeling, allowing for flexible model specification and inference using MCMC (Markov Chain Monte Carlo) methods.
+
+b. Purpose and Application of Models:
+    •	ARIMA: Used to model and forecast time series data by capturing trends and seasonality.
+    •	GARCH: Used to model and forecast volatility, which is crucial for risk management in financial markets.
+    •	Bayesian Models: Provide a probabilistic framework for understanding uncertainty in predictions and parameter estimates.
+
+c. Data Generation Processes:
+    •	The Brent oil prices are generated by market transactions influenced by supply and demand dynamics, geopolitical events, and macroeconomic factors.
+    •	Time series models like ARIMA and GARCH aim to capture these underlying processes by modeling the temporal dependencies and volatility in the data.
+
+d. Expected Outputs and Limitations:
+    •	Expected Outputs:
+        o	Forecasted oil prices with confidence intervals.
+        o	Quantified impact of key events on oil prices.
+        o	Insights into the drivers of oil price fluctuations.
+        •	Limitations:
+        o	Models may not capture sudden, unprecedented events (e.g., black swan events).
+        o	The quality of predictions depends on the quality and granularity of the data.
+        o	Models may require frequent updating as new data becomes available.
+
+Author: Natnahom Asfaw
+Date: 20/02/2025
