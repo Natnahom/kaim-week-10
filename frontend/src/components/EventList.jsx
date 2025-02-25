@@ -3,11 +3,15 @@ import React from 'react';
 const EventList = ({ events }) => {
     return (
         <div>
-            <h3>Key Events</h3>
+            <h2>Key Events</h2>
             <ul>
-                {events.map((event, index) => (
-                    <li key={index}>{event}</li>
-                ))}
+                {events.length > 0 ? (
+                    events.map((event, index) => (
+                        <li key={index}>{event.EventDescription || event.Event}</li> // Adjust based on your data
+                    ))
+                ) : (
+                    <li>No events available.</li>
+                )}
             </ul>
         </div>
     );
