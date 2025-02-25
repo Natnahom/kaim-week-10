@@ -177,5 +177,54 @@ It will install everything needed for this task.
 ## Run the Code
 - You can follow the analysis.ipynb file.
 
+# Task 3: Brent Oil Prices Dashboard
+
+## Overview
+
+This project provides an interactive dashboard for visualizing Brent oil prices along with key events that may influence price changes. The dashboard allows users to filter data based on specific date ranges and view historical trends, forecasts, and correlations with significant events.
+
+## Features
+
+- **Historical Data Visualization**: Display historical Brent oil prices in a line chart.
+- **Event Correlation**: Visualize how specific events have influenced oil prices.
+- **Date Range Filtering**: Allow users to filter displayed data by selecting start and end dates.
+- **Key Indicators**: Show key metrics such as volatility and average price changes.
+
+## React requirements
+- axios
+- recharts
+- react-datepicker
+- Install them using 
+    - npm install axios recharts react-datepicker
+
+## Installation
+
+1. Clone the repository:
+
+2. Install dependencies:
+- npm install
+
+3. Start the development server:
+- first cd backend
+- run the flask api with
+    - python app.py
+- the cd frontend and
+- npm run dev
+Open your browser and navigate to http://localhost:3000.
+
+## Usage
+- Once the dashboard is loaded, you will see a line chart displaying Brent oil prices.
+- Use the date pickers to select a date range and click the "Filter" button to update the displayed data.
+- Key events are listed below the chart, providing context for price changes.
+
+## Technologies Used
+- React: Frontend library for building the user interface.
+- Recharts: Charting library for visualizing data.
+- Axios: For making API requests to fetch Brent oil price data.
+- React Datepicker: For date selection.
+
+## CSS Styling
+- The dashboard is styled with simple CSS to enhance user experience. You can customize styles in the src/App.css file.
+
 Author: Natnahom Asfaw
 Date: 20/02/2025
