@@ -4,3 +4,5 @@ seaborn
 matplotlib
 scikit-learn
 statsmodels
+Flask
+Flask-Cors
